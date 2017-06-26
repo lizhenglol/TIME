@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/yingpian.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+		
+			
+			.container {
+
+			}
+			
+			#tianqi {
+				width: 90%;
+				margin: auto;
+			}
+			
+			#tianqi-1 {
+				width: 100%;
+				margin: 0 auto;
+
+				font-size: 1.5rem;
+				background-size: auto;
+				padding: 1rem;
+			}
+			
+			#diqu {
+				width: 100%;
+				height: 5rem;
+				text-align: center;
+			}
+			
+			#cha {
+				width: 50%;
+				text-decoration: none;
+				margin-top: 2rem;
+				width: 50%;
+				height: 3rem;
+			}
+			
+			#chaxun {
+				font-size: 2rem;
+				font-weight: bold;
+				color: red;
+			}
+			
+			#ul1 li {
+				float: left;
+				font-size: 1.5rem;
+				width: 14%;
+			}
+			
+			#ul2 {
+				margin-top: 4rem;
+			}
+			
+			#ul2 li {
+				position: absolute;
+				display: none;
+			}
+			
+			#zhou {
+				width: 100%;
+			}
+			
+			#zhou .tq {
+				float: left;
+				margin-left: 1rem;
+				margin-top: 2rem;
+			}
+		}
+		.tq:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		#zhou:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		.diqu {
+			font-weight: bold;
+			font-size: 2rem;
+		}
+		.tex {
+			font-size: 2.7rem;
+			color: #B92C28;
+		}
+		.ro {
+			font-size: 1.5rem;
+		}
+		.ro1 {
+			font-size: 1.2rem;
+		}
+		.tuijian:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		.tuijian p {
+			padding: 1rem;
+			width: 50%;
+			float: left;
+		}
+		#pingmu {
+			position: relative;
+			left: 5%;
+			top: 0;
+			width: 90%;
+			height: 15rem;
+			background: cadetblue;
+			text-align: center;
+			line-height: 15rem;
+			font-size: 2rem;
+			color: red;
+			border-radius: 0.2rem;
+			display: none;
+		}
+		#hide {
+			position: absolute;
+			right: 0;
+			top: -40%;
+			font-size: 3rem;
+			color: #000000;
+		}
+		.tt {
+			color: #D9534F;
+		}
+		
+		</style>
+	</head>
+
+	<body>
+		
+
+
+		<div class="container" style="background-color: black;width: 100%;">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: white;">
+          <span class="sr-only"><font><font>切换导航</font></font></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+            
+					<a class="navbar-brand" href="index.html" style="color:red;font-weight: bold;font-size: 2rem;">
+                                     TIME
+        </a>
+				</div>
+      <div class="navbar-collapse collapse navbar-right">
+        <ul class="nav navbar-nav"style="background-color: black;">
+          <li><a href="index.html"><font><font style="color: white;font-size: 2rem;">电影</font></font></a></li>
+          <li><a href="tianqi.html"><font><font style="color: white;font-size: 2rem;">天气</font></font></a></li>
+          <li><a href="lishi.html"><font><font style="color:  white;font-size: 2rem;">历史上的今天</font></font></a></li>
+          <li><a href="gongjiao.html"><font><font style="color:white;font-size: 2rem;">	公交查询</font></font></a></li>
+            <li></li>
+        </ul>
+      </div>
+			</div>
+		</div>
+		
+		<div id="tianqi">
+			<div id="tianqi-1">
+				<div id="diqu">
+					<input type="text" name="" id="cha" value="" placeholder="请输入要查询的地区" style="height: 3rem;" /><span id="chaxun"style="cursor: pointer;">查询</span>
+				</div>
+
+				<div class="yi">
+					<div id="zhou">
+
+					</div>
+
+					<div id="shuow" style="display: none;">
+
+						<p class="diqu">地区:</p>
+						<div class="tuijian">
+
+							<h4 class="aa">出行建议:</h3></div>
+				
+			    </div>
+			    </div>
+			
+			</div>	
+		
+			</div>
+		
+		
+		</div>
+		<div id="pingmu">
+			你查询的不存在
+			<span id="hide">
+			   X
+			</span>
+		</div>
+	</body>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tianqi.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/wenzitexiao.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">function tttt() {
+	var amAct = am[Math.floor(Math.random() * am.length)];
+	$(".tq").addClass('animated ' + amAct);
+
+}
+
+var ping = document.getElementById("pingmu")
+var hid=document.getElementById("hide")
+     var didian
+    $("#chaxun").click(function(){
+    	if($("#cha").val()==""){
+    		alert("请输入内容")
+    	}
+
+     
+    $.each(arr.cities, function(index) {
+    	var chengshi=arr.cities[index].city;
+    	var chengshiid=arr.cities[index].cityid;
+//  	var ind=index
+    	if($("#cha").val()==chengshi){   		
+          $("#shuow").show()
+    		didian=chengshiid
+    		$("#cha").val("")
+    	
+    	}
+
+
+
+    });
+          sp()
+    $(".tq").remove()
+    $(".aa").remove()
+    $(".mlgb").remove()
+    })
+        function sp(){
+
+	$.ajax({
+		type:"get",
+        url:"1.php",
+        data:{"cityIds":didian},
+
+
+		success:function(data){
+
+	 	
+			var obj=JSON.parse(data)
+            var objs=obj.value[0]
+
+			var tex="<span class='mlgb'>"+objs.city+"</span>";
+//			var yujing="<p>"+objs.alarms[0].alarmContent+"</p> <p>发布地:"+objs.alarms[0].alarmDesc+" </p><p>级别:"+ objs.alarms[0].alarmLevelNoDesc+"  </p><p>建议:"+objs.alarms[0].precaution +"</p>"
+			$(".diqu").append(tex)
+//          $(".yujing").append(yujing)
+
+		 var zhou=objs.weathers;
+		 var jianyi=objs.indexes
+		           for (var i = 0; i < jianyi.length; i++) {
+
+                           var txet="<p class='aa'><span class='tex'>"+jianyi[i].name+"</span>:&nbsp;&nbsp;<span class='ro1'>"+jianyi[i].level+"</span></br><span class='ro'>"+jianyi[i].content+"</span></p>"
+                              $(".tuijian").append(txet)
+	                             tttt()
+                              
+		           }
+		           
+		           
+				 for (var i = 0; i < zhou.length; i++) {
+
+				     	  	var tian="<p class='tq'><span class='immg'></span>"+zhou[i].week+":&nbsp;&nbsp;&nbsp;</br>天气：&nbsp;&nbsp;&nbsp;<a class='tt'>"+zhou[i].weather+"</a></br>白天气温:&nbsp;&nbsp;&nbsp;"+zhou[i].temp_day_c+"</br>夜间气温:&nbsp;&nbsp;&nbsp;"+zhou[i].temp_night_c+"</p>"
+		                    $("#zhou").append(tian);		  
+	                             tttt()
+				 
+				 }
+				 
+				 $.each($('.tq a'), function(i) {
+				 	var aaa = $('.tq a').eq(i).html();
+
+				 	if(aaa == '阴'||aaa == '多云'){
+
+                    var index = i;
+				 	var tu=["雷.png","晴.png","雨天.png","阴.png"];
+
+		           	 var imglp= "<img src='img/"+tu[3]+"'>";
+		           	 
+
+		          $('.immg').eq(index).append(imglp)
+				 		
+				 }
+				 	if(aaa == '中雨'||aaa == '大雨'||aaa == '阵雨'||aaa == '雷阵雨'){
+
+                    var index = i;
+				 	var tu=["雷.png","晴.png","雨天.png","阴.png"];
+
+		           	 var imglp= "<img src='img/"+tu[0]+"'>";
+		           	 
+
+		           $('.immg').eq(index).append(imglp)
+				 		
+				 	}
+                  if(aaa == '小雨'){
+
+                    var index = i;
+				 	var tu=["雷.png","晴.png","雨天.png","阴.png"];
+
+		           	 var imglp= "<img src='img/"+tu[2]+"'>";
+		           	 
+
+		           $('.immg').eq(index).append(imglp)
+				 		
+				 	}
+				 	if(aaa == '晴'){
+
+                    var index = i;
+				 	var tu=["雷.png","晴.png","雨天.png","阴.png"];
+
+		           	 var imglp= "<img src='img/"+tu[1]+"'>";
+		           	 
+
+		          $('.immg').eq(index).append(imglp)
+				 		
+				 	}
+                  
+				 });
+				 
+
+             
+		}
+	});
+        }
+
+	
+</script>
+</html>

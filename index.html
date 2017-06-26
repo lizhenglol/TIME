@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/yingpian.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container" style="background-color: black;width: 100%;">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: white;">
+          <span class="sr-only"><font><font>切换导航</font></font></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+					<a class="navbar-brand" href="index.html" style="color:red;font-weight: bold;font-size: 2rem;">
+						TIME
+					</a>
+				</div>
+				<div class="navbar-collapse collapse navbar-right">
+					<ul class="nav navbar-nav" style="background-color: black;">
+						<li>
+							<a href="index.html">
+								<font>
+									<font style="color: white;font-size: 2rem;">电影</font>
+								</font>
+							</a>
+						</li>
+						<li>
+							<a href="tianqi.html">
+								<font>
+									<font style="color: white;font-size: 2rem;">天气</font>
+								</font>
+							</a>
+						</li>
+						<li>
+							<a href="lishi.html">
+								<font>
+									<font style="color:  white;font-size: 2rem;">历史上的今天</font>
+								</font>
+							</a>
+						</li>
+						<li>
+							<a href="gongjiao.html">
+								<font>
+									<font style="color:white;font-size: 2rem;"> 公交查询</font>
+								</font>
+							</a>
+						</li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="zhong">
+
+			<div id="shangying">
+				<p class="p">
+
+					影院热映
+					<a href="indexx.html" id="sp">查看更多>></a>
+				</p>
+			</div>
+		</div>
+
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/wenzitexiao.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/template" id="templete">
+
+		<div class="a col-lg-3 col-xs-12">
+			<a href="sousuo.html?<%= id %>"> <img class="img-thumbnail " src="<%=images.large%>" /></a><br />
+			<p><span class="ming"><%= title %></span> <span class="pingfen">评分<i><%=rating.average%></i></span>
+				<h5 class="fen"><%= durations %></h5></p>
+			<p>上映时间
+				<%= mainland_pubdate %>
+			</p>
+		</div>
+	</script>
+	<script type="text/javascript">
+		function tttt() {
+			var amAct = am[Math.floor(Math.random() * am.length)];
+			$(".a").addClass('animated ' + amAct);
+
+		}
+		//上映
+		var ye = 1;
+		var shu = 3;
+		var templeteStr = $("#templete").html();
+		console.log(templeteStr);
+
+		var tempStr = _.template(templeteStr);
+		$.ajax({
+			type: "get",
+			url: "https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&start=" + ye + "&count=" + shu + "&client=&udid=",
+			dataType: "jsonp",
+			success: function(data) {
+
+				var datd = data.subjects;
+
+				localStorage.name = data.original_title
+
+				console.log(data)
+				$.each(datd, function(index, ev) {
+					var heroStr = tempStr(ev);
+					var $domObj = $(heroStr);
+					$("#shangying").append($domObj)
+					tttt()
+
+				})
+
+			}
+		});
+	</script>
+
+</html>

@@ -1,0 +1,175 @@
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			
+			#anniu {
+				width: 100%;
+				height: 5rem;
+				font-size: 2rem;
+				border: 2px solid black;
+				background-color: black;
+				color: white;
+				border-radius: 0.5rem;
+			}
+			
+			.kba {
+				color: red;
+			}
+			
+			
+			#chengshi,
+			#chufa,
+			#daoda {
+				width: 100%;
+				height: 5rem;
+				
+				border: 0.1rem solid #122B40;
+				text-indent: 1rem;
+
+				font-size: 2rem;
+				border-radius: 0.5rem;
+			}
+			
+			.asd {
+				color:black;
+				font-size: 2rem;
+				font-weight: bold;
+				font-family:' 叶根友毛笔行书2.0版';
+			}
+			
+			.container {
+				padding: 1rem;
+				background-color:  rgba(46, 109, 164, 0.26);
+				border-radius: 0.5rem;
+			}
+			
+			.didian div p {
+				font-size: 2rem;
+			}
+			.navbar-toggle span{
+				background-color: #000000;
+
+			}
+			.roo{
+				width: 90%;
+				margin: 0 auto;
+				padding: 2rem;
+			}
+		</style>
+
+	</head>
+
+	<body >
+
+		<div class="container" style="background-color: black;width: 100%;">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: white;">
+          <span class="sr-only"><font><font>切换导航</font></font></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+            
+					<a class="navbar-brand" href="index.html" style="color:red;font-weight: bold;font-size: 2rem;">
+                                     返回
+        </a>
+				</div>
+      <div class="navbar-collapse collapse navbar-right">
+        <ul class="nav navbar-nav"style="background-color: black;">
+          <li><a href="index.html"><font><font style="color: white;font-size: 2rem;">电影</font></font></a></li>
+          <li><a href="tianqi.html"><font><font style="color: white;font-size: 2rem;">天气</font></font></a></li>
+          <li><a href="lishi.html"><font><font style="color:  white;font-size: 2rem;">历史上的今天</font></font></a></li>
+          <li><a href="gongjiao.html"><font><font style="color:white;font-size: 2rem;">	公交查询</font></font></a></li>
+            <li></li>
+        </ul>
+      </div>
+			</div>
+		</div>
+		<header>
+
+			<div class="container"style="background: white;">
+				<h1 style="text-align: center;">公交查询</h1>
+
+				<span class="asd">城市</span>
+				<input type="text" id="chengshi" placeholder="请输入所在城市">
+				</br>
+
+				<span class="asd">起始站</span>
+				<input type="text" id="chufa" placeholder="请输入出发地">
+				<br />
+
+				<span class="asd">目的地</span>
+				<input type="text" id="daoda" placeholder="请输入目的地">
+				</br>
+				</br>
+
+				<input type="button" name="" id="anniu" value="路线查询" />
+				
+			</div>
+		</header>
+<div class="roo">
+					<div class="didian"></div>
+				</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/wenzitexiao.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">function tttt() {
+	var amAct = am[Math.floor(Math.random() * am.length)];
+	$(".aaa").addClass('animated ' + amAct);
+
+}
+tttt()
+$("#anniu").click(function() {
+			$(".didian").empty();
+			var chengshi = $("#chengshi").val();
+			var chufa = $("#chufa").val();
+			var daoda = $("#daoda").val();
+			if (chengshi == "" || chufa == "" || daoda == "") {
+				alert("请确认填写完整")
+			} else {
+				$.ajax({
+					url: "http://route.showapi.com/844-3",
+					data: {
+						showapi_appid: "40582",
+						showapi_sign: "30efa9bcecf146168ae9dc3d6101d564",
+						city: chengshi,
+						start_addr: chufa,
+						end_addr: daoda
+					},
+					success: function(data) {
+						var obj = data.showapi_res_body.busList;
+
+						$.each(obj, function(index, value) {
+							$.each(obj[index].segList, function(i) {
+								var objs = obj[index].segList[i];
+								var textt = '<div class="aaa"><h2 class="kba">' + objs.line_name + '</h2><p>途径站点：<span >' + objs.stats + '</span></p><p>出发地：<span>' + objs.start_stat + '</span></p><p>到达站点：<span>' + objs.end_stat + '</span></p></div>'
+								$(".didian").append(textt);
+								tttt()
+							})
+
+						})
+
+					}
+				});
+
+			}
+
+		})
+	</script>
+
+</html>

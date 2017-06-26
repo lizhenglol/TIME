@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/yingpian.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{
+				background-color: rgba(102, 175, 233, 0.5);
+			}
+			#lishi{
+				width: 90%;
+				margin: 0 auto;
+			}
+			#cx{
+				text-decoration: none;
+              width: 50%;
+              height: 3rem;
+              text-indent: 1rem;
+			}
+			#dianwo{
+				color: red;
+			}
+			#neirong{
+				width: 100%;
+				padding: 1rem;
+				color:  #5CB85C;
+			}
+	#neirong:after{
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+			
+			#neirong-1{
+				width: 100%;
+
+				background-color: white;
+
+			}
+	#neirong-1:after{
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+
+		}
+		.div {
+
+         margin-top: 3rem;
+         border: 1px  double  #C0C0C0;
+         padding: 1rem;
+		}
+			.div p{
+			font-size:2rem;
+			}
+			.container{
+				background-color: #28A4C9;
+			}
+		</style>
+	</head>
+	<body>
+
+
+		<div class="container" style="background-color: black;width: 100%;">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: white;">
+          <span class="sr-only"><font><font>切换导航</font></font></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+            
+					<a class="navbar-brand" href="index.html" style="color:red;font-weight: bold;font-size: 2rem;">
+                                     TIME
+        </a>
+				</div>
+      <div class="navbar-collapse collapse navbar-right">
+        <ul class="nav navbar-nav"style="background-color: black;">
+          <li><a href="index.html"><font><font style="color: white;font-size: 2rem;">电影</font></font></a></li>
+          <li><a href="tianqi.html"><font><font style="color: white;font-size: 2rem;">天气</font></font></a></li>
+          <li><a href="lishi.html"><font><font style="color:  white;font-size: 2rem;">历史上的今天</font></font></a></li>
+          <li><a href="gongjiao.html"><font><font style="color:white;font-size: 2rem;">	公交查询</font></font></a></li>
+            <li></li>
+        </ul>
+      </div>
+			</div>
+		</div>
+		
+		<div id="lishi">
+			<h4 class="h3">历史上的今天:</h4>
+			<p  class="h3" style="text-align: center;"><input type="text" name="cx" id="cx" placeholder="请输入日期例如0725" />
+			<br/><br/><span id="dianwo" style="cursor: pointer;">查询</span></p>
+		
+		<div id="neirong">
+			 <div id="neirong-1">
+			 	<div class="biaoti" ></div>
+			 	
+			 </div>
+		</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/wenzitexiao.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">function tttt() {
+	var amAct = am[Math.floor(Math.random() * am.length)];
+	$(".div").addClass('animated ' + amAct);
+
+}
+
+$("#dianwo").click(function(){
+	
+	if($("#cx").val()==""){
+	     alert("木有") 
+
+	}else{
+    var tex=$("#cx").val()	 
+		
+    $.ajax({
+    	type:"get",
+        url: "http://route.showapi.com/119-42",
+        data: {
+            showapi_appid: "40582",
+            showapi_sign: "30efa9bcecf146168ae9dc3d6101d564",
+            date:tex,
+        },
+        success: function(data) {
+            var obj = data.showapi_res_body.list;
+
+          
+          
+          $.each(obj, function(index,value) {
+          	   var texts="<div class='div col-xs-12  col-sm-12 col-md-12 col-lg-6 col-lg-offset-3'><p>"+obj[index].title+"&nbsp;&nbsp;&nbsp;&nbsp;时间:"+ obj[index].year +"</p><div><img class='col-xs-12 col-sm-12 col-md-12 col-lg-8' src='"+ obj[index].img +"'></div></div>"
+              $(".biaoti").append(texts)
+              tttt()
+             
+          });
+        }
+
+    })
+		
+	}
+
+
+    $(".div").remove()
+})
+    
+</script>
+</html>

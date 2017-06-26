@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/yingpian.css" />
+		<title>Document</title>
+		<style>
+		#ying {
+				width: 90%;
+				margin: 0 auto;
+			}
+			
+			.pf {
+				font-weight: 400;
+				font-size: 2.2rem;
+				margin-left: 1rem;
+				color: red;
+			}
+			
+			.pl {
+				color: #737373;
+				margin-left: 1rem;
+			}
+			
+			#roo1 {
+				width: 100%;
+			}
+			
+			#wei {
+				width: 90%;
+				background-color: rosybrown;
+				margin: 0 auto;
+				margin-top: 3rem;
+			}
+			
+			.roo {
+				width: 100%;
+				height: auto;
+				margin: 0 auto;
+				padding: 10px 10px 10px 10px;
+			}
+			/*@media (min-width:650px) { 
+.roo{
+	width: 90%;
+	height: 40rem;
+	margin: 0 auto;
+	padding: 10px 10px 10px 10px;
+
+}
+
+@media (min-width:640px) { 
+.roo{
+	width: 90%;
+	height: 30rem;
+	margin: 0 auto;
+	padding: 10px 10px 10px 10px;
+
+}*/
+		}
+		.appo {
+			width: 10rem;
+			height: 10rem;
+			background-color: red;
+		}
+		.shi {
+			width: 50rem;
+			height: 20rem;
+		}
+		.roos {
+			width: 100%;
+			margin: 0 auto;
+		}
+		#jq {
+			width: 90%;
+			margin: 0 auto;
+			margin-top: 2rem;
+		}
+		.roo:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		.yingpian {
+			width: 25%;
+			margin-top: 1rem;
+			float: left;
+			margin-left: 2rem;
+		}
+		.yingpian img {
+			width: 100%;
+			height: auto;
+		}
+		.roos:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		#juzu {
+			width: 90%;
+			margin: 0 auto;
+			margin-top: 1rem;
+		}
+		#juzu:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		.yh {
+			width: 8rem;
+			height: 5rem;
+			float: left;
+			padding: 10px;
+		}
+		.nicheng {
+			color: #EB9316;
+		}
+		.pinlun {
+			color: #5BC0DE;
+			font-size: 1.5rem;
+		}
+		.texie li {
+			border: 1px solid #CCCCCC;
+			padding: 1rem 1rem 1rem 1rem;
+			border-radius: 0.3rem;
+		}
+		#ping1 h3 {
+			width: 50%;
+			float: left;
+			text-align: center;
+		}
+		#ping1:after {
+			clear: both;
+			display: block;
+			content: "";
+			overflow: hidden;
+		}
+		#ping1 {
+			width: 100%;
+		}
+		.time {
+			color: #ADADAD;
+			float: right;
+		}
+		.texie ul {
+			position: absolute;
+			display: none;
+			padding: 10px 10px 0px 0px;
+			margin: 10px 10px 10px 0px;
+		}
+		.pping {
+			color: red;
+		}
+		.p1 {
+			font-family: "微软雅黑";
+			font-size: 1.5rem;
+			color: #C0C0C0;
+		}
+		.gexing {
+			color: red;
+			font-size: 1.5rem;
+		}
+		</style>
+	</head>
+
+	<div class="container" style="background-color: black;width: 100%;">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: white;">
+          <span class="sr-only"><font><font>切换导航</font></font></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+				<a class="navbar-brand" href="index.html" style="color:red;font-weight: bold;font-size: 2rem;">
+					返回
+				</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-right">
+				<ul class="nav navbar-nav" style="background-color: black;">
+					<li>
+						<a href="index.html">
+							<font>
+								<font style="color: white;font-size: 2rem;">电影</font>
+							</font>
+						</a>
+					</li>
+					<li>
+						<a href="tianqi.html">
+							<font>
+								<font style="color: white;font-size: 2rem;">天气</font>
+							</font>
+						</a>
+					</li>
+					<li>
+						<a href="lishi.html">
+							<font>
+								<font style="color:  white;font-size: 2rem;">历史上的今天</font>
+							</font>
+						</a>
+					</li>
+					<li>
+						<a href="gongjiao.html">
+							<font>
+								<font style="color:white;font-size: 2rem;"> 公交查询</font>
+							</font>
+						</a>
+					</li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="zhong">
+		<p class="p">影片介绍</p>
+		<div id="ying">
+
+		</div>
+
+		<div id="jq">
+			<h3>剧情截图：</h3>
+			<div class="roos">
+
+			</div>
+		</div>
+		<div id="juzu">
+			<div id="ping1">
+
+				<h3 class="pping">热门短评</h3></li>
+				<h3>  影片评论</h3>
+
+			</div>
+
+			<div class="texie">
+				<ul id="s1" style="display: block;">
+
+				</ul>
+				<ul id="s2">
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	</body>
+
+	<script src="js/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/template" id="templete">
+		<div class="roo">
+			<div id="yp">
+				<h3><%= original_title %>:</h3>
+				<p><span class="pf">评分:<i><%= rating.average %></i></span><span class="pl"><%= ratings_count %>人评论</span></p>
+			</div>
+
+			<div id="roo1">
+				<div class="sp" style="float: left;">
+					<img class="col-xs-12" src="<%= images.large %>" />
+				</div>
+				<h3>介绍：</h4><br />
+                <h4 ><%= summary %></h4>
+				</div>
+
+			</div>
+
+</script>
+<script type="text/javascript">
+	//上映
+var skkt = window.location.href;
+var pat = skkt.split("?")[1];
+
+	    var templeteStr = $("#templete").html();
+       var tempStr = _.template(templeteStr);
+	$.ajax({
+		type:"get",
+		url:"//api.douban.com/v2/movie/subject/"+pat+"?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=&udid=",
+	    dataType: "jsonp",
+	    success:function(data){
+           console.log(data)
+            var heroStr = tempStr(data);
+	        var $domObj = $(heroStr);
+            $("#ying").append($domObj);
+	    	var da=data.trailers;	  
+		       for (var i = 0; i < da.length; i++) {
+		        var im="<div class='yingpian'><img class=' ' src="+ da[i].medium +"/></div>"
+		//          console.log(tex)
+		              $(".roos").append(im);
+		       }
+
+        
+			
+  
+	   } 	
+	});
+	//
+
+	 //短评
+$.ajax({
+	type:"get",
+	url:"https://api.douban.com/v2/movie/subject/"+pat+"/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b&start=0&count=20&client=&udid=",
+	 dataType: "jsonp",
+	 success:function(data){
+//	 	console.log(data)
+	 	var obj =data.reviews;
+	 	console.log(obj)
+	 	for (var i = 0; i < obj.length; i++) {
+	 		var imgg="<li><div class='yh'><img src="+ obj[i].author.avatar +" /></div><h4>昵称：<span class='nicheng'>"+ obj[i].author.name +"</span></br><span class='gexing'>签名："+obj[i].author.signature +" </span></br><span class='p1'>评论:</span><p class='pinlun'>"+obj[i].summary+" </p></br><p class='time'>"+ obj[i].created_at +"</p></h5></li></br> "
+	 		
+
+	 		$("#s1").append(imgg);
+	 		var sty=obj[i].author.alt;
+	 		 $(".yh").click(function(){
+	 		 	self.location =sty;
+	 		 })
+	 	}
+	 }
+});
+//	 		var imgg="<li><div class='yh'><img src="+ obj[i].author.avatar +" /></div><h4>昵称：<a class='nicheng'>"+ obj[i].author.name +"</a></br><span class='p1'>评论:</span><a class='pinlun'>"+obj[i].summary+" </a></br><a class='time'>"+ obj[i].created_at +"</a></h5></li></br> "
+	 
+$("#ping1 h3").click(function(){
+		
+			var i=$(this).index()
+			$(this).addClass("pping").siblings().removeClass("pping");
+
+			$(".texie ul").eq(i).show().siblings().hide();
+		
+		})
+
+	 
+  //影评
+  $.ajax({
+	type:"get",
+	url:"https://api.douban.com/v2/movie/subject/"+pat+"/comments?apikey=0b2bdeda43b5688921839c8ecb20399b&count=20&client=&udid=",
+	 dataType: "jsonp",
+	 success:function(data){
+//	 	console.log(data)
+	 	var obj =data.comments;
+	 	console.log(obj)
+	 	for (var i = 0; i < obj.length; i++) {
+	 		var imgg="<li><div class='yh'><img src="+ obj[i].author.avatar +" /></div><h4>昵称：<span class='nicheng'>"+ obj[i].author.name +"</span></br><span class='gexing'>签名："+obj[i].author.signature +" </span></br><span class='p1'>评论:</span><p class='pinlun'>"+obj[i].content+" </p></br><p class='time'>"+ obj[i].created_at +"</p></h5></li></br> "
+	 		$("#s2").append(imgg)
+	 	}
+	 }
+});
+
+</script>
+</html>
